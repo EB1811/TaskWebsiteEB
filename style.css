@@ -1,0 +1,519 @@
+			/* BODY */
+			html, body {
+				height: 100%;
+				min-width: 720px;
+				margin: 0;
+				padding: 0;
+				background-color: #cfc0af;
+			}
+			
+			
+			/* Header Toolbar */
+			header {
+				height: 10%;
+				border-bottom: 3px solid #484349;
+				min-height: 70px;
+			}
+			#Nav {
+				list-style-type: none;
+				margin: 0 auto;
+				padding: 0;
+				height: 100%;
+				overflow: hidden;
+				width: 100%;
+			}
+			li {
+				float: left;
+				width: 100%;
+			}
+			a {
+				transition: 0.3s;
+			}
+			a:link, a:visited {
+				display: block;
+				text-align: center;
+				width: 100%;
+				background-color: #2eb8b8;
+				text-decoration: none;
+				font-style: italic;
+				font-weight: bold;
+				font-size: 30px;
+				color: #FFFFFF;
+				margin: 0;
+				padding: 35px;
+			}
+			a:hover {
+				background-color: #33cccc;
+			}
+			
+			
+			/* Main Content */
+			#main {
+				margin: 0;
+				padding: 0;
+				height: 89.725%;
+			}
+			
+			
+			/* Left Panel */
+			#buttonDiv {
+				float: left;
+				position: relative;
+				width: 15%;
+				min-width: 150px;
+				height: 100%;
+				background-color: #cfbfaf;
+				box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.35);
+			}
+			/* New Task button */
+			#newTaskText {
+				position: absolute;
+				top: 20px;
+				height: 50px;
+				width: 100%;
+				color: inherit;
+				background-color: #e2d9cf;
+				transition-duration: 0.5s;
+			}
+			#newTaskText:hover {
+				background-color: #2eb8b8;
+			}
+			.button {
+				background-color: transparent;
+				color: #734926;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				border-style: none;
+				font-family: "Times New Roman";
+				text-align: center;
+				text-decoration: none;
+				font-style: italic;
+				font-size: 20px;
+				font-weight: bold;
+				cursor: pointer;
+				transition-duration: 0.05s;
+			}
+			.button:focus {
+				outline: 0;
+			}
+			.button:hover {
+				color: #FFFFFF;
+			}
+			#ordering {
+				position: absolute;
+				width: 100%;
+				bottom: 85px;
+				padding-top: 10px;
+				border-top: 3px solid #484349;
+			}
+			.order {
+				float: left;
+				width: 100%;
+				margin: 2.5px 0;
+				height: 30px;
+				color: inherit;
+				background-color: #e2d9cf;
+				transition-duration: 0.5s;
+			}
+			.order:hover {
+				background-color: #2eb8b8;
+			}
+			.oButton {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				border-style: none;
+				font-family: "Times New Roman";
+				text-align: center;
+				text-decoration: none;
+				font-style: italic;
+				font-size: 20px;
+				font-weight: bold;
+				cursor: pointer;
+				transition-duration: 0.05s;
+			}
+			
+			/* Order by date button. */
+			#order1 {
+				position: absolute;
+				height: 50px;
+				width: 100%;
+			}
+			#order2 {
+				position: absolute;
+				top: 125px;
+				height: 50px;
+				width: 100%;
+			}
+			#order3 {
+				position: absolute;
+				top: 225px;
+				height: 50px;
+				width: 100%;
+			}
+			#orderByDate {
+				height: 50px;
+			}
+			
+			/* New Task Form */
+			#newTaskFormPanel {
+				margin: 50px;
+				width: 400px;
+				height: 400px;
+				background-color: #f6f2ef;
+				font-weight: bold;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+				text-align: center;
+				font-style: italic;
+				position: absolute;
+				left: 250px;
+				z-index: 2;
+			}
+			#newTaskExit {
+				position: absolute;
+				right: 2px;
+				top: 2px;
+				padding-top: 3.5px;
+				padding-bottom: 3.5px;
+				padding-right: 3.5px;
+				padding-left: 3.5px;
+				font-size: 15px;
+				font-weight: bold;
+				font-family: "Arial";
+				cursor: pointer;
+			}
+			#newTaskExit:hover {
+				color: #2eb8b8;
+			}
+			.title {
+				font-size: 30px;
+				font-family: "Times New Roman";
+				font-weight: bold;
+				color: #734926;
+				margin: 0;
+				padding: 10px 20px;
+			}
+			#newTaskForm {
+				float: left;
+				font-size: 12.5px;
+				font-weight: inherit;
+				margin: 10px;
+				color: #734926;
+				text-align: left;
+			}
+			input[type=text] {
+				float: left;
+				font-family: "Times New Roman";
+				font-weight: bold;
+				font-size: 15px;
+				width: 200px;
+				margin: 7.5px;
+				padding: 10px 20px;
+				border-style: none;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.025);
+				color: #734926;
+			}
+			input[type=text]:focus {
+				outline-color: #2eb8b8;
+			}
+			#priorityRadio {
+				float: left;
+				width: 200px;
+				margin: 7.5px;
+				padding: 10px 20px;
+				font-size: 12px;
+				font-family: "Times New Roman";
+				font-style: normal;
+				background-color: #ffffff;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.025);
+			}
+			#priorityRadioTitle {
+				margin: 2.5px;
+				margin-bottom: 4px;
+				font-size: 15px;
+			}
+			#dueDateDiv {
+				float: left;
+				width: 200px;
+				margin: 7.5px;
+				padding: 10px 20px;
+				font-size: 12.5px;
+				font-family: "Times New Roman";
+				font-style: normal;
+				background-color: #ffffff;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.025);
+			}
+			#dueDateDivTitle {
+				margin: 2.5px;
+				margin-bottom: 4px;
+				font-size: 15px;
+			}
+			#newDueDateInput {
+				float: left;
+				margin-top: 2.5px;
+				padding-top: 2px;
+				padding-bottom: 2px;
+				width: 100%;
+				font-size: 12.5px;
+			}
+			input#newdueDateInput {
+				font-size: 7.5px;
+				width: 45%;
+				border-style: none;
+				padding: 0;
+			}
+			input#newdueDateInput:focus {
+				outline-color: #2eb8b8;
+			}
+			#addTaskText {
+				position: absolute;
+				bottom: 10px;
+				left: 0;
+				width: 100%;
+				height: 43px;
+				transition-duration: 0.5s;
+				background-color: #e2d9cf;
+			}
+			#addTaskText:hover {
+				background-color: #2eb8b8;
+			}
+			input[type=submit] {
+				position: absolute;
+				left: 0;
+				font-size: 20px;
+				font-weight: inherit;
+				font-family: inherit;
+				font-style: inherit;
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				border-style: none;
+				color: #734926;
+				cursor: pointer;
+				transition-duration: 0.05s;
+				background-color: transparent;
+			}
+			input[type=submit]:hover {
+				color: #FFFFFF;
+			}
+			input[type=submit]:focus{
+				outline: none;
+			}
+			
+			
+			/* Right margin */
+			#rightPanel {
+				float: right;
+				width: 10%;
+				height: 100%;
+			}
+			
+			/* List of tasks */
+			#taskList {
+				float: left;
+				width: 75%;
+				height: 100%;
+			}
+			/* Individual task */
+			.task {
+				position: relative;
+				float: left;
+				margin: 10px;
+				margin-top: 40px;
+				background-color: #f6f2ef;
+				outline: 2px solid #e6b800;
+				color: #734926;
+				width: 15%;
+				height: 150px;
+				text-align: center;
+				font-family: "Times New Roman";
+				font-style: italic;
+				font-weight: bold;
+				font-size: 10px;
+				transition-duration: 0.5s;
+				box-shadow: none;
+			}
+			.expandTask {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+				z-index: 1;
+				transition-duration: 0.05s;
+			}
+			.expandTask:hover {
+				outline: 2px solid #2eb8b8;
+			}
+			.contractTask {
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				font-family: "Arial";
+				font-size: 7.5px;
+				text-align: center;
+				cursor: pointer;
+			}
+			.contractTaskText {
+				padding-top: 1.5px;
+				padding-bottom: 1.5px;
+				padding-right: 3px;
+				padding-left: 3px;
+			}
+			.contractTaskText:hover {
+				color: #2eb8b8;
+			}
+			.taskName {
+				margin: 10px;
+			}
+			.hideDescription {
+				position: absolute;
+				padding-top: 1.5px;
+				padding-bottom: 0.75px;
+				padding-right: 3px;
+				padding-left: 3px;
+				top: 18px;
+				right: 2px;
+				font-size: 10px;
+				font-weight: bold;
+				font-family: "Arial";
+				cursor: pointer;
+			}
+			.hideDescription:hover {
+				color: #2eb8b8;
+			}
+			.taskDescription {
+				height: 35px;
+				margin: 5px;
+				margin-bottom: 2.5px;
+				text-align: left;
+				outline: 1px solid #e2d9cf;
+			}
+			.taskDescriptionTextArea {
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				border-style: none;
+				background-color: #f6f2ef;
+				font-size: 7.5px;
+				resize: none;
+				
+			}
+			.taskDescriptionTextArea:focus {
+				outline-color: #2eb8b8;
+			}
+			.select {
+				font-family: "Times New Roman";
+				font-style: italic;
+				font-weight: bold;
+				font-size: 10px;
+				width: 100%;
+				padding: 3px 0;
+				cursor: pointer;
+				color: #734926;
+				background-color: #e2d9cf;
+				border: none;
+				-webkit-appearance: none;
+				text-align-last: center;
+				transition-duration: 0.5s;
+			}
+			.select:focus {
+				outline: none;
+			}
+			.select:hover {
+				background-color: #cfbfaf;
+			}
+			.taskPriority {
+				float: left;
+				margin-top: 2px;
+				cursor: pointer;
+				width: 50%;
+			}
+			.taskStatus {
+				float: left;
+				margin-top: 2px;
+				cursor: pointer;
+				width: 50%;
+			}
+			.taskDueDate {
+				float: left;
+				margin-top: 2.5px;
+				padding-top: 2px;
+				padding-bottom: 2px;
+				width: 100%;
+				background-color: #e2d9cf;
+				font-size: 7.5px;
+			}
+			input.dueDateInput {
+				font-size: 7.5px;
+				width: 45%;
+				border-style: none;
+				padding: 0;
+			}
+			input.dueDateInput:focus {
+				outline-color: #2eb8b8;
+			}
+			.updateTask {
+				position: absolute;
+				bottom: 15.5px;
+				margin: 0;
+				width: 100%;
+				height: 11px;
+				cursor: pointer;
+				background-color: #e2d9cf;
+				transition-duration: 0.5s;
+			}
+			.updateTask:hover {
+				background-color: #2eb8b8;
+			}
+			input.updateTaskText {
+				padding: 0;
+				height: 100%;
+				font-size: 7.5px;
+			}
+			.taskDeletion {
+				position: absolute;
+				bottom: 3px;
+				margin: 0;
+				width: 100%;
+				height: 11px;
+				cursor: pointer;
+				background-color: #e2d9cf;
+				transition-duration: 0.5s;
+			}
+			.taskDeletion:hover {
+				background-color: #2eb8b8;
+			}
+			input.taskDeletionText {
+				padding: 0;
+				height: 100%;
+				font-size: 7.5px;
+				transition-duration: 0.05s;
+			}
+			.taskDeletionText:hover {
+				color: #FFFFFF;
+			}
+			
+			
+			
+			/* Footer */
+			footer {
+				position: fixed;
+				font-size: 12.5px;
+				font-weight: bold;
+				bottom: 0;
+				z-index: 2;
+				width: 100%;
+				background-color: #4f4950;
+				color: #d9ccbf;
+				
+			}
+			#footerText {
+				margin: 0;
+				margin-top: 2.5px;
+				margin-left: 2.5px;
+			}
+			
+			

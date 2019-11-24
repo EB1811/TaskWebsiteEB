@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+	<head>
+		<meta charset="UTF-8">
+		<title>Main Content</title>
+		<link rel="stylesheet" href="style.css">
+		
+		<script>
+			// Toggle the visibility of the newTaskForm panel.
+			function toggleVisibility(id, className)
+			{
+				if(className === "none")
+				{
+					var panel = document.getElementById(id);
+				}
+				else if(className != "none")
+				{
+					var div = document.getElementById(id);
+					var panel = div.getElementsByClassName(className)[0];
+				}
+				if (panel.style.display === "none") 
+				{
+					panel.style.display = "block";
+				}
+				else 
+				{
+					panel.style.display = "none";
+				}
+			}
+			
+			// Expand div.
+			function expand(id, expandClassName,contractClassName, mode)
+			{
+				// Get the individual task panel and the expandTask and contractTask divs.
+				var panel = document.getElementById(id);
+				var expandTaskDiv = panel.getElementsByClassName(expandClassName)[0];
+				var contractTaskDiv = panel.getElementsByClassName(contractClassName)[0];
+				
+				// If the mode is 1 and the panel has not yet expanded, expand and show contractTask.
+				if (mode === 1 && panel.style.zIndex === "0") 
+				{
+					panel.style.transform = "scale(2.25)";
+					panel.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.05)";
+					panel.style.zIndex = "1";
+					expandTaskDiv.style.display = "none";
+					contractTaskDiv.style.display = "block";
+				}
+				// If the mode is 0 and the panel has already expanded, contract and hide contractTask.
+				else if (mode === 0 && panel.style.zIndex === "1")
+				{
+					panel.style.transform = "scale(1)";
+					panel.style.boxShadow = "none";
+					panel.style.zIndex = "0";
+					expandTaskDiv.style.display = "block";
+					contractTaskDiv.style.display = "none";
+				}
+			}
+
+			function newTask() {
+				// Create the new document elements for the new task panel.
+				var newTaskPanel = document.createElement("div");
+				
+				// Get the 'taskList' div.
+				var taskListElement = document.getElementById("taskList");
+				var listOfTasks = document.getElementsByClassName("task");
+				
+				// Set the class names for the new elements and append it onto 'taskList' div.
+				newTaskPanel.className = "task";
+				newTaskPanel.id = "a" + (listOfTasks.length + 1);
+				taskListElement.appendChild(newTaskPanel);
+				
+				
+				
+			}
+			
+		</script>
+		
+	</head>
+
+	<body>
+		<header>
+			<ul id="Nav">
+				<li><a href="index.php">CE154 - Task Manager</a></li>
+			</ul>
+		</header>
+		
+		<div id="main">
+			<!-- Left panel. -->
+			<div id="buttonDiv">
+				<!-- Show new task creator div. -->
+				<div id="newTaskText">
+					<button class="button" onclick="toggleVisibility('newTaskFormPanel', 'none');">
+						New Task
+					</button>
+				</div>
+				<div id="ordering">
+					<!-- Order by date. -->
+					<form class="order" method="post">
+						<div class="oButton">
+							<input type="hidden" class="updateTaskText" name="dateOrder" value="dateOrder">
+							<input type="submit" value="Order By Date">
+						</div>
+					</form>
+					<!-- Order by priority. -->
+					<form class="order" method="post">
+						<div class="oButton">
+							<input type="hidden" class="updateTaskText" name="priorityOrder" value="priorityOrder">
+							<input type="submit" value="Order By Priority">
+						</div>
+					</form>
+					<!-- Order by status. -->
+					<form class="order" method="post">
+						<div class="oButton">
+							<input type="hidden" class="updateTaskText" name="statusOrder" value="statusOrder">
+							<input type="submit" value="Order By Status">
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- Create new task div. -->
+			<div id="newTaskFormPanel" style="display: none;">
+				<div id="newTaskExit" onclick="toggleVisibility('newTaskFormPanel', 'none')">
+					x
+				</div>
+				<p class="title">New Task</p>
+				<form id="newTaskForm" method="post">
+					<input type="text" name="name" value="Name"><br>
+					<input type="text" name="description" value="Description"><br>
+					<div id="priorityRadio">
+						<p id="priorityRadioTitle">Priority:</p>
+						<input type="radio" name="priority" value="High"> High
+						<input type="radio" name="priority" value="Medium"> Medium
+						<input type="radio" name="priority" value="Low"> Low<br>
+					</div>
+					<div id="dueDateDiv">
+						<p id="dueDateDivTitle">Date Due:</p>
+						<input type="date" name="dueDate" id="newDueDateInput"><br>
+					</div>
+					<div id="addTaskText">
+						<input type="submit" value="Add Task", 'none'>
+					</div>
+				</form>
+			</div>
+			<!-- Right margin div. -->
+			<div id="rightPanel">
+				
+			</div>
+			<!-- Div to hold each task. -->
+			<div id="taskList">
+			</div>
+		</div>
+		
+		<!-- Footer. -->
+		<footer>
+			<p id="footerText">
+				Created by: Emmanuils Borovikovs<br>
+				Contact: eb18847@essex.ac.uk
+			</p>
+		</footer>
+		
+	</body>
+</html>
