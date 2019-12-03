@@ -25,6 +25,7 @@
 			li {
 				float: left;
 				width: 100%;
+				height: 100%;
 			}
 			a {
 				transition: 0.3s;
@@ -33,6 +34,7 @@
 				display: block;
 				text-align: center;
 				width: 100%;
+				height: 100%;
 				background-color: #2eb8b8;
 				text-decoration: none;
 				font-style: italic;
